@@ -1,0 +1,57 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected
+,Test Case,Verify Login Screen Display,1,Click on the link to eNOW,Login screen is displayed
+,,,1,Click on the link to eNOW,Login screen is displayed
+
+,Test Case,Verify Login Screen Elements,1,Observe the right half of the screen,Right half of screen displays a configurable image
+,,,1,Observe the right half of the screen,Right half of screen displays a configurable image
+,,,2,Observe the top left corner of the screen,Top left corner contains a language dropdown with all available languages
+,,,3,Observe the screen label,Screen displays Login label
+,,,4,Observe the text entry box label,Text entry box is labeled Email
+,,,5,Observe the text entry box default content,Text entry box contains default text Enter email
+,,,6,Observe the Next button,Next button is present with configurable color and is enabled by default
+
+,Test Case,Verify Language Dropdown Display,1,Click on the language dropdown,List of available languages is displayed
+,,,1,Click on the language dropdown,List of available languages is displayed
+
+,Test Case,Verify Available Languages,1,Observe the languages in the dropdown list,List includes English and Spanish options
+,,,1,Observe the languages in the dropdown list,List includes English and Spanish options
+
+,Test Case,Verify English Language Selection,1,Select English from language dropdown,English is set as application language
+,,,1,Select English from language dropdown,English is set as application language
+,,,2,Observe page content after selection,All text on Login page appears in English
+,,,3,Observe dropdown after selection,Language dropdown list disappears after selection
+
+,Test Case,Verify Spanish Language Selection,1,Select Spanish from language dropdown,Spanish is set as application language
+,,,1,Select Spanish from language dropdown,Spanish is set as application language
+,,,2,Observe page content after selection,All text on Login page appears in Spanish
+,,,3,Observe dropdown after selection,Language dropdown list disappears after selection
+
+,Test Case,Verify Empty Email Field Validation,1,Leave email field empty,Email field contains no value
+,,,1,Leave email field empty,Email field contains no value
+,,,2,Click the Next button,Error message Enter an email is displayed
+
+,Test Case,Verify Initial Email Format Validation,1,Begin typing in the email field with an invalid format,Message Please enter a valid email address is displayed
+,,,1,Begin typing in the email field with an invalid format,Message Please enter a valid email address is displayed
+,,,2,Observe validation message,Message appears immediately as user begins typing
+
+,Test Case,Verify Invalid Email Format Persistence,1,Type invalid email in the field,Message Please enter a valid email address is displayed
+,,,1,Type invalid email in the field,Message Please enter a valid email address is displayed
+,,,2,Observe validation message,Message continues to display until a valid email is entered
+
+,Test Case,Verify Valid Email Format Acceptance,1,Enter valid email format in the email field,System accepts the email as valid
+,,,1,Enter valid email format in the email field,System accepts the email as valid
+,,,2,Observe validation message behavior,Validation message disappears
+
+,Test Case,Verify Email Registration Validation,1,Enter valid email address,Email is entered in the field
+,,,1,Enter valid email address,Email is entered in the field
+,,,2,Click the Next button,System validates the email against registered accounts
+
+,Test Case,Verify Unregistered Email Handling,1,Enter valid but unregistered email address,Email is entered in the field
+,,,1,Enter valid but unregistered email address,Email is entered in the field
+,,,2,Click the Next button,System validates the email against registered accounts
+,,,3,Observe error message,Message Couldnt find an account for the email address provided. is displayed
+
+,Test Case,Verify Registered Email Handling,1,Enter valid registered email address,Email is entered in the field
+,,,1,Enter valid registered email address,Email is entered in the field
+,,,2,Click the Next button,System validates the email against registered accounts
+,,,3,Observe next screen,Password entry mechanism is presented

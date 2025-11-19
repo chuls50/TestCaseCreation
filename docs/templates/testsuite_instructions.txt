@@ -1,0 +1,39 @@
+Analyze the user story and test plan to create a test suite
+Create a comprehensive test case table in markdown format with the following specifications:
+
+STRUCTURE REQUIREMENTS:
+- Single comprehensive table with hierarchical organization
+- Group test cases by functional areas with empty rows between groups
+- Add hierarchical numbering within functional areas (1.1, 1.2, 2.1, 2.2, etc.)
+- Use markdown table format
+
+COLUMN STRUCTURE (in this exact order):
+| Functional Area | Test ID | Test Title | Priority | Prerequisites | Test Steps | Expected Results | Test Data | Pass/Fail Criteria |
+
+FORMATTING RULES:
+1. Test Steps column: Format as numbered lists within the table cell (1. Step one<br>2. Step two)
+2. Expected Results column: Corresponding numbered results that match test steps (1. Expected result one<br>2. Expected result two)
+3. Prerequisites: Use <br> tags for line breaks when multiple prerequisites exist
+4. Priority: Use High/Medium/Low scale
+5. Functional Areas: Bold the functional area names in the first occurrence of each group
+6. Visual separation: Add empty row between functional area groups using: | | | | | | | | | |
+
+PRIORITY ASSIGNMENT LOGIC:
+- High: Core functionality, critical user journey, validation that blocks user progress
+- Medium: Supporting features, language options, non-blocking functionality
+- Low: Edge cases, minor UI elements
+
+HIERARCHICAL NUMBERING:
+- Within each functional area, number test cases sequentially (1.1, 1.2, 1.3...)
+- Include the hierarchical number in the Test Title column after the main title
+
+EXAMPLE ROW FORMAT:
+| **Functional Area Name** | TC-XXX-001 | 1.1 Test Title Here | High | Prerequisite 1<br>Prerequisite 2 | 1. First test step<br>2. Second test step | 1. First expected result<br>2. Second expected result | Test data here | Pass/fail criteria here |
+
+Apply a format to organize test cases by the functional groupings:
+
+Maintain all original test content but restructure into this hierarchical table format.
+
+Include a Traceability Matrix at the end.
+
+The output file should follow the example shown in 'examples/testsuite_example.md'

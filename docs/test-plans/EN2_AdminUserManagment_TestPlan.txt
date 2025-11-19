@@ -1,0 +1,110 @@
+# eNOW Admin User Management Feature Test Plan
+
+## Requirements Analysis
+
+| Scenario Name | Requirement | Test Case |
+|---------------|-------------|-----------|
+| Scenario 1: Institution Profile Specifications | 1.1 Manage Users screen should display when Users menu is clicked | 1.1.1 Verify Manage Users screen appears when clicking Users menu |
+|  | 1.2 Manage Users screen should have correct elements | 1.2.1 Verify Search box is present for searching users by name |
+|  |  | 1.2.2 Verify Invite Users button is present |
+|  |  | 1.2.3 Verify Filter dropdown is present for filtering by user roles |
+|  | 1.3 User rows should display correct information | 1.3.1 Verify each user row displays User Name (not editable) |
+|  |  | 1.3.2 Verify each user row displays Email (not editable) |
+|  |  | 1.3.3 Verify each user row displays assigned Roles |
+|  |  | 1.3.4 Verify each user row displays Add Roles link |
+|  |  | 1.3.5 Verify each user row displays Active toggle for registered users |
+|  |  | 1.3.6 Verify each user row displays Resend Invite button for invited but unregistered users |
+|  |  | 1.3.7 Verify each user row displays Last Updated timestamp |
+|
+| Scenario 2: Click on Search Text Box | 2.1 Search box should filter users as text is entered | 2.1.1 Verify typing in search box filters users by User Name |
+|  |  | 2.1.2 Verify typing in search box filters users by Email |
+|  | 2.2 Search should filter in real-time | 2.2.1 Verify user list updates as each character is typed |
+|
+| Scenario 3: Click on Filter Dropdown | 3.1 Filter dropdown should display available roles | 3.1.1 Verify clicking filter dropdown displays list of roles |
+|  | 3.2 Selecting roles should filter user list | 3.2.1 Verify selecting a role filters users with that role |
+|  |  | 3.2.2 Verify selecting multiple roles filters users with any selected role |
+|  | 3.3 Clinician role should be called Coordinator | 3.3.1 Verify "Coordinator" role is displayed instead of "Clinician" |
+|
+| Scenario 4: Click on Invite User Button | 4.1 Invite User popup should display with correct fields | 4.1.1 Verify Invite User popup appears when clicking Invite User button |
+|  |  | 4.1.2 Verify First Name text field is present |
+|  |  | 4.1.3 Verify Last Name text field is present |
+|  |  | 4.1.4 Verify Email text field is present |
+|  |  | 4.1.5 Verify Institution dropdown is present and defaults to current Institution |
+|  |  | 4.1.6 Verify Institution dropdown shows all accessible Institutions for multi-institution Admins |
+|  |  | 4.1.7 Verify Role dropdown is present with single-select capability |
+|  |  | 4.1.8 Verify Cancel button is present and always enabled |
+|  |  | 4.1.9 Verify Send Invite button is present and disabled initially |
+|  | 4.2 Send Invite button should enable when all fields are filled | 4.2.1 Verify Send Invite button enables when all required fields have values |
+|
+| Scenario 5: Click on Cancel Button on Invite User Popup | 5.1 Cancel button should close popup without sending invite | 5.1.1 Verify clicking Cancel dismisses the Invite User popup |
+|  |  | 5.1.2 Verify no invitation email is sent when Cancel is clicked |
+|
+| Scenario 6: Click on Send Invite Button on Invite User Popup | 6.1 Send Invite button should send invitation email | 6.1.1 Verify clicking Send Invite sends email to specified address |
+|  |  | 6.1.2 Verify email contains registration link for eNOW |
+|  | 6.2 Popup should be dismissed after sending invite | 6.2.1 Verify Invite User popup is dismissed after sending invite |
+|
+| Scenario 7: Click on "X" on "Role chip" in a Row on the Manage Users Screen | 7.1 Clicking X on role chip should remove that role | 7.1.1 Verify clicking X on a role chip removes the role from user |
+|  |  | 7.1.2 Verify role chip disappears after removal |
+|
+| Scenario 8: Click on "Add roles" Link in a Row on the Manage Users Screen | 8.1 Add roles link should display available roles | 8.1.1 Verify clicking Add Roles displays list of available roles |
+|  | 8.2 Selecting a role should add it to user | 8.2.1 Verify selecting a role adds it to user's role list |
+|  |  | 8.2.2 Verify Coordinator role is displayed instead of Clinician |
+|  | 8.3 Adding Provider role should trigger onboarding | 8.3.1 Verify adding Provider role triggers Provider onboarding screen on next login |
+|
+| Scenario 9: Click on "Active" Toggle in a Row on the Manage Users Screen - Toggle Off | 9.1 Clicking Active toggle when off should reactivate user | 9.1.1 Verify clicking off toggle reactivates the user |
+|  |  | 9.1.2 Verify toggle switches to On state |
+|  | 9.2 Active toggle should only display for registered users | 9.2.1 Verify Active toggle is displayed instead of Resend Invite button for registered users |
+|
+| Scenario 10: Click on "Active" Toggle in a Row on the Manage Users Screen - Toggle On | 10.1 Clicking Active toggle when on should deactivate user | 10.1.1 Verify clicking on toggle deactivates the user |
+|  |  | 10.1.2 Verify toggle switches to Off state |
+|  | 10.2 Active toggle should only display for registered users | 10.2.1 Verify Active toggle is displayed instead of Resend Invite button for registered users |
+
+## Detailed Test Cases
+
+| Test Case ID | Test Scenario | Expected Result | Test Data |
+|--------------|---------------|-----------------|-----------|
+| 1.1.1 | Navigate to Users menu from admin main screen | Manage Users screen is displayed | N/A |
+| 1.2.1 | View Manage Users screen | Search box is visible for searching users | N/A |
+| 1.2.2 | View Manage Users screen | Invite Users button is visible | N/A |
+| 1.2.3 | View Manage Users screen | Filter dropdown is visible | N/A |
+| 1.3.1 | View user row on Manage Users screen | User Name is displayed and not editable by Admin | User with name "John Doe" |
+| 1.3.2 | View user row on Manage Users screen | Email is displayed and not editable by Admin | User with email "john.doe@example.com" |
+| 1.3.3 | View user row on Manage Users screen | Assigned roles are displayed as chips | User with roles: "Admin", "Coordinator" |
+| 1.3.4 | View user row on Manage Users screen | Add Roles link is visible | N/A |
+| 1.3.5 | View user row for registered user | Active toggle is displayed | Registered user |
+| 1.3.6 | View user row for invited but unregistered user | Resend Invite button is displayed instead of Active toggle | Invited but unregistered user |
+| 1.3.7 | View user row on Manage Users screen | Last Updated timestamp is displayed | User with last activity timestamp |
+| 2.1.1 | Type in search box | Users are filtered based on matching User Name | Search term = "John" |
+|  | Type in search box | Users are filtered based on matching Email | Search term = "doe@example" |
+| 2.1.2 | Type character in search box | User list updates dynamically | Search term typed character by character |
+| 3.1.1 | Click on filter dropdown | List of available roles is displayed | N/A |
+| 3.2.1 | Select single role from filter dropdown | Only users with selected role are displayed | Role = "Admin" |
+| 3.2.2 | Select multiple roles from filter dropdown | Users with any of the selected roles are displayed | Roles = ["Admin", "Coordinator"] |
+| 3.3.1 | View filter dropdown | "Coordinator" is displayed instead of "Clinician" | N/A |
+| 4.1.1 | Click Invite User button | Invite User popup is displayed | N/A |
+| 4.1.2 | View Invite User popup | First Name text field is present | N/A |
+| 4.1.3 | View Invite User popup | Last Name text field is present | N/A |
+| 4.1.4 | View Invite User popup | Email text field is present | N/A |
+| 4.1.5 | View Invite User popup as single-institution Admin | Institution dropdown defaults to current Institution | Admin with access to single institution |
+| 4.1.6 | View Invite User popup as multi-institution Admin | Institution dropdown shows all accessible Institutions | Admin with access to multiple institutions |
+| 4.1.7 | View Invite User popup | Role dropdown is present and allows single selection | N/A |
+| 4.1.8 | View Invite User popup | Cancel button is present and enabled | N/A |
+| 4.1.9 | View Invite User popup before filling fields | Send Invite button is disabled | No fields filled |
+| 4.2.1 | Fill all required fields in Invite User popup | Send Invite button becomes enabled | First Name = "Jane", Last Name = "Smith", Email = "jane.smith@example.com", Institution = "Test Clinic", Role = "Coordinator" |
+| 5.1.1 | Click Cancel button on Invite User popup | Popup is dismissed and returns to Manage Users screen | N/A |
+| 5.1.2 | Fill fields and click Cancel on Invite User popup | No invitation email is sent | First Name = "Jane", Last Name = "Smith", Email = "jane.smith@example.com" |
+| 6.1.1 | Fill all fields and click Send Invite | Email is sent to specified email address | Email = "newuser@example.com" |
+| 6.1.2 | Receive invitation email | Email contains clickable registration link | N/A |
+| 6.2.1 | Click Send Invite button | Invite User popup is dismissed after sending | N/A |
+| 7.1.1 | Click X on role chip for a user | Role is removed from user's assigned roles | User with roles ["Admin", "Coordinator"], remove "Admin" |
+| 7.1.2 | Click X on role chip | Role chip disappears from user row | N/A |
+| 8.1.1 | Click Add Roles link for a user | List of available roles is displayed | N/A |
+| 8.2.1 | Select role from Add Roles list | Selected role is added to user's role list and displayed as chip | Add role "Provider" |
+| 8.2.2 | View Add Roles list | "Coordinator" is displayed instead of "Clinician" | N/A |
+| 8.3.1 | Add Provider role to user | Provider onboarding screen is presented on user's next login | Add role "Provider" to user without Provider role |
+| 9.1.1 | Click Active toggle when in Off state | User is reactivated | User with Active toggle = Off |
+| 9.1.2 | Click Active toggle when in Off state | Toggle switches to On state visually | User with Active toggle = Off |
+| 9.2.1 | View registered user row | Active toggle is displayed, not Resend Invite button | Registered user |
+| 10.1.1 | Click Active toggle when in On state | User is deactivated | User with Active toggle = On |
+| 10.1.2 | Click Active toggle when in On state | Toggle switches to Off state visually | User with Active toggle = On |
+| 10.2.1 | View registered user row | Active toggle is displayed, not Resend Invite button | Registered user |

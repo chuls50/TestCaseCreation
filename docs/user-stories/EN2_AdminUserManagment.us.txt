@@ -1,0 +1,114 @@
+Scenario 1: Institution Profile Specifications
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+WHEN they have clicked on the "Users" menu on the left navigation area
+THEN they will be presented with the "Manager Users" screen with the following contents:
+Search box - Allows Admins to search for users by name
+Invite Users button
+Filter dropdown - Allows Admins to filter by user roles
+Row for each user in the Institution with the following values in each row:
+User Name - Not editable by Admin, only by the user, themselves
+Email - Not editable by Admin
+Roles assigned to user
+Add Roles link
+Active toggle - allows Admin to deactivate or delete users; NOTE: if the user has been invited, but the user never registered, then this toggle is replaced with a button labeled "Resend Invite"
+Last Updated - indicates last time there was activity for that user
+Image
+
+Scenario 2: Click on Search Text Box
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+WHEN the user clicks on the "Search" text box
+THEN as the user types in values, filter the list of Users based on the value entered by the user as compared with User Name and Email values
+
+Scenario 3: Click on Filter Dropdown
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+WHEN the user clicks on one or more of the roles in the filter dropdown
+THEN as the user selects a dropdown value, filter the list of Users based the users that have the role selected (NOTE the role of "Clinician" is now called "Coordinator")
+
+Image
+
+Scenario 4: Click on Invite User Button
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+WHEN the user clicks on the "Invite User" button
+THEN the are presented with the following pop-up:
+First Name text field
+Last Name text field
+Email text field
+Institution - defaults to the current Institution; but if the Administrator has access to multiple Institutions, then the user can be invited to any of those to which the Admin has access - this will be a single-select dropdown
+Role dropdown - list of available roles - only one can be selected
+Cancel button - always enabled
+Send Invite button - activated when a value is present for all fields
+
+Image
+
+Scenario 5: Click on Cancel Button on Invite User Popup
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+   AND the "Invite User" popup is on display
+WHEN the user clicks on the "Cancel" button
+THEN do not send an invitation to the user (if even specified)
+   AND dismiss the "Invite User" popup
+
+Scenario 6: Click on Send Invite Button on Invite User Popup
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+   AND the "Invite User" popup is on display
+WHEN the user clicks on the "Send invite" button
+THEN send an email to the defined email address that includes a link then when they click on it will allow them to register for eNOW
+   AND dismiss the "Invite User" popup
+
+Scenario 7: Click on "X" on "Role chip" in a Row on the Manage Users Screen
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+WHEN the user clicks on the "X" of a "role chip" for a user in the list of users
+THEN remove that role designation for that user
+Image
+
+Scenario 8: Click on "Add roles" Link in a Row on the Manage Users Screen
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+WHEN the user clicks on the "Add Roles" link for a user in the list of users
+THEN display a list of available roles
+   AND add the role that the user selects to the list of available roles for that user (NOTE the role of "Clinician" is now called "Coordinator")
+   AND if the Provider is added as a role, we present the Provider onboarding screen to the user the next time they login 
+
+Image
+
+Scenario 9: Click on "Active" Toggle in a Row on the Manage Users Screen - Toggle Off
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+   AND for the user in question, the "Active" toggle is displayed (not "Resend Invite" button)
+   AND the Active toggle displayed is "off" (deactivated)
+WHEN the user clicks on the "Active" toggle for a user in the list of users
+THEN the user is re-activated 
+   AND switch the "Active" toggle to "On"
+
+Scenario 10: Click on "Active" Toggle in a Row on the Manage Users Screen - Toggle On
+GIVEN that an Institution Administrator is registered to use eNOW
+   AND they have been presented with the main screen for the administrator
+   AND they have clicked on the "Users" menu on the left navigation area
+   AND the "Manage Users" screen is on display
+   AND for the user in question, the "Active" toggle is displayed (not "Resend Invite" button)
+   AND the Active toggle displayed is "on" (active)
+WHEN the user clicks on the "Active" toggle for a user in the list of users
+THEN deactivate the current user
+   AND switch the "Active" toggle to "off"

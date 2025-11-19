@@ -1,0 +1,36 @@
+{
+  "name": "testcasecreation",
+  "version": "1.0.0",
+  "description": "Automated test case creation from user stories using GitHub Copilot agents and Playwright",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "generate-testcases": "node scripts/generate-testcases.js",
+    "generate-testcases:review": "node scripts/generate-testcases.js --review"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuls50/TestCaseCreation.git"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "test-automation",
+    "github-copilot",
+    "test-cases",
+    "azure-devops"
+  ],
+  "author": "chuls50",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chuls50/TestCaseCreation/issues"
+  },
+  "homepage": "https://github.com/chuls50/TestCaseCreation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1"
+  }
+}

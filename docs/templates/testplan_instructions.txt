@@ -1,0 +1,47 @@
+Given a user story for a feature that contains well defined scenarios
+Given the scenarios outlined in the user story are defined in Gherkin Syntax
+
+Analyze the requirements for each scenario in the given user story and output them into a table with the following columns:
+
+|Scenario Name| Requirement | Test Case|
+
+If a Scenario has multiple requirements, or if the requirements have multiple test cases, please skip a line like so:
+
+|Scenario Number 1: Scenario Name| Requirement | Test Case|
+                                 | Requirement | Test Case|
+                                               | Test Case|
+
+|Scenario Number 2: Scenario Name| Requirement | Test Case|
+                                 | Requirement | Test Case|
+                                               | Test Case|                                            
+                                             
+
+Then for each test case I want to know the following:
+
+|ScenarioNumber.RequirementNumber | Test Scenario| Expected Result| Test Data|
+
+For example:
+
+# eNOW Forgot Password Feature Test Plan
+
+## Requirements Analysis
+
+| Scenario Name | Requirement | Test Case |
+|---------------|-------------|-----------|
+| Scenario 1: Allow User to Change Password for eNOW | 1.1 When user clicks "Forgot Password" link, the Forgot Password screen should be displayed | 1.1.1 Verify the Forgot Password screen is displayed when the link is clicked |
+|  | 1.2 Forgot Password screen should have the correct elements | 1.2.1 Verify screen label shows "Forgot Password?" |
+|  |  | 1.2.2 Verify the text entry box is labeled "Email" |
+|  |  | 1.2.3 Verify the email text box displays the validated email address and is uneditable |
+|  |  | 1.2.4 Verify "Submit" button is present with configurable color and enabled by default |
+|  |  | 1.2.5 Verify "Back to password page" link is present and enabled |
+|
+| Scenario 2: User Clicks on the Back to password page link | 2.1 Back to password page link should return user to Password screen | 2.1.1 Verify clicking "Back to password page" link returns user to the Password screen |
+|
+| Scenario 3: User Clicks on the Submit Button | 3.1 Submit button should trigger email with verification link | 3.1.1 Verify email with verification link is sent to the validated email address |
+|  | 3.2 Validate Email screen should be displayed after submission | 3.2.1 Verify "Verify your email" screen is displayed after clicking Submit |
+|  | 3.3 Validate Email screen should have correct elements | 3.3.1 Verify screen label shows "Verify your email" |
+|  |  | 3.3.2 Verify screen displays label "A verification link has been set to [email address]" |
+|  |  | 3.3.3 Verify screen displays message "Did not receive a link?" |
+|  |  | 3.3.4 Verify "Resend link" link is present |
+
+Output your results into a .txt file in the parent directoy.

@@ -1,0 +1,261 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected
+,Test Case,Verify Manage Users Screen Access,1,Navigate to main administrator screen,Main administrator screen is displayed
+,,,1,Navigate to main administrator screen,Main administrator screen is displayed
+,,,2,Click on Users menu in left navigation area,Manage Users screen is displayed
+
+,Test Case,Verify Manage Users Screen Elements,1,Observe the Search box,Search box is present with placeholder text
+,,,1,Observe the Search box,Search box is present with placeholder text
+,,,2,Observe the Invite Users button,Invite Users button is visible and clickable
+,,,3,Observe the Filter dropdown,Filter dropdown is present for role filtering
+,,,4,Observe the user list rows,Each user row displays all required information
+
+,Test Case,Verify User Row Content for Registered User,1,Observe user row for a registered user,User row is displayed
+,,,1,Observe user row for a registered user,User row is displayed
+,,,2,Check User Name field,User Name is visible and not editable
+,,,3,Check Email field,Email is visible and not editable
+,,,4,Check Roles display,Assigned roles are displayed as chips
+,,,5,Check Add Roles link,Add Roles link is visible
+,,,6,Check Active toggle,Active toggle is displayed
+,,,7,Check Last Updated timestamp,Last Updated timestamp is shown
+
+,Test Case,Verify Resend Invite Button Display,1,Locate user row for invited but unregistered user,User row is displayed
+,,,1,Locate user row for invited but unregistered user,User row is displayed
+,,,2,Observe the control in place of Active toggle,Resend Invite button is displayed instead of Active toggle
+
+,Test Case,Verify Search by User Name,1,Click on Search box,Cursor appears in search box
+,,,1,Click on Search box,Cursor appears in search box
+,,,2,Type partial or full user name,User list filters dynamically as text is entered
+,,,3,Observe user list,Only users matching the search term by name are displayed
+
+,Test Case,Verify Search by Email,1,Click on Search box,Cursor appears in search box
+,,,1,Click on Search box,Cursor appears in search box
+,,,2,Type partial or full email address,User list filters dynamically as text is entered
+,,,3,Observe user list,Only users matching the search term by email are displayed
+
+,Test Case,Verify Real-time Search Filtering,1,Click on Search box,Cursor appears in search box
+,,,1,Click on Search box,Cursor appears in search box
+,,,2,Type text character by character,User list updates after each character typed
+,,,3,Observe user list after each character,Filter results refine progressively with each character
+
+,Test Case,Verify Filter Dropdown Display,1,Click on Filter dropdown,Dropdown opens and displays list of available roles including Admin Coordinator Provider etc
+,,,1,Click on Filter dropdown,Dropdown opens and displays list of available roles including Admin Coordinator Provider etc
+
+,Test Case,Verify Single Role Filter,1,Click on Filter dropdown,Dropdown opens
+,,,1,Click on Filter dropdown,Dropdown opens
+,,,2,Select one role (e.g. Admin),Role is selected
+,,,3,Observe user list,User list filters to show only users with selected role
+
+,Test Case,Verify Multiple Role Filter,1,Click on Filter dropdown,Dropdown opens
+,,,1,Click on Filter dropdown,Dropdown opens
+,,,2,Select multiple roles (e.g. Admin and Coordinator),Multiple roles are selected
+,,,3,Observe user list,User list filters to show users with any of the selected roles
+
+,Test Case,Verify Coordinator Role Display in Filter,1,Click on Filter dropdown,Dropdown opens
+,,,1,Click on Filter dropdown,Dropdown opens
+,,,2,Look for role options in dropdown,Coordinator role is displayed (not Clinician)
+
+,Test Case,Verify Invite User Popup Display,1,Click on Invite User button,Invite User popup is displayed with all required fields First Name Last Name Email Institution dropdown Role dropdown Cancel button Send Invite button
+,,,1,Click on Invite User button,Invite User popup is displayed with all required fields First Name Last Name Email Institution dropdown Role dropdown Cancel button Send Invite button
+
+,Test Case,Verify Institution Default for Single Institution Admin,1,Observe Institution dropdown in Invite User popup,Institution dropdown defaults to Admins current institution
+,,,1,Observe Institution dropdown in Invite User popup,Institution dropdown defaults to Admins current institution
+
+,Test Case,Verify Institution Options for Multi-Institution Admin,1,Click on Institution dropdown,Dropdown displays all institutions accessible to the Admin
+,,,1,Click on Institution dropdown,Dropdown displays all institutions accessible to the Admin
+,,,2,Observe available options,Admin can select any accessible institution
+
+,Test Case,Verify Send Invite Button State,1,Observe Send Invite button initially,Send Invite button is disabled
+,,,1,Observe Send Invite button initially,Send Invite button is disabled
+,,,2,Fill in First Name only,Button remains disabled
+,,,3,Fill in Last Name,Button remains disabled
+,,,4,Fill in Email,Button remains disabled
+,,,5,Select Institution,Button remains disabled
+,,,6,Select Role,Button becomes enabled when all fields are filled
+,,,7,Observe Send Invite button,Button is now enabled
+
+,Test Case,Verify Cancel Button Functionality,1,Fill in all fields in Invite User popup,Fields are filled
+,,,1,Fill in all fields in Invite User popup,Fields are filled
+,,,2,Click Cancel button,Popup is dismissed and Manage Users screen is displayed
+,,,3,Check email server for invitations,No invitation email was sent
+
+,Test Case,Verify Send Invite Functionality,1,Fill in all required fields,All fields are filled
+,,,1,Fill in all required fields,All fields are filled
+,,,2,Click Send Invite button,Popup is dismissed
+,,,3,Check email server for invitation,Invitation email is sent to specified address
+,,,4,Verify invitation email content,Email contains registration link for eNOW
+
+,Test Case,Verify Remove Role via X Button,1,Locate user with multiple roles,User row displays multiple role chips
+,,,1,Locate user with multiple roles,User row displays multiple role chips
+,,,2,Click X on one role chip,Role chip is removed
+,,,3,Observe users role list,Users role list no longer includes the removed role
+
+,Test Case,Verify Add Roles Link Display,1,Locate user row,User row is visible
+,,,1,Locate user row,User row is visible
+,,,2,Click Add Roles link,List of available roles is displayed
+,,,3,Observe displayed list,Roles not currently assigned to user are shown
+
+,Test Case,Verify Add Role to User,1,Select a role from available roles list,Role is selected
+,,,1,Select a role from available roles list,Role is selected
+,,,2,Observe users role list,Selected role is added to users role list and displayed as a chip
+
+,Test Case,Verify Coordinator Role in Add Roles,1,Open Add Roles list,Add Roles list is displayed
+,,,1,Open Add Roles list,Add Roles list is displayed
+,,,2,Look for role options,Coordinator role is shown (not Clinician)
+
+,Test Case,Verify Provider Role Onboarding,1,Select user without Provider role,User without Provider role is selected
+,,,1,Select user without Provider role,User without Provider role is selected
+,,,2,Click Add Roles,Add Roles list opens
+,,,3,Add Provider role,Provider role is added
+,,,4,Log in as that user,User logs in successfully
+,,,5,Observe screen presented,Provider onboarding screen is presented
+
+,Test Case,Verify Active Toggle Display for Registered Users,1,Locate registered user row,Registered user row is displayed
+,,,1,Locate registered user row,Registered user row is displayed
+,,,2,Observe control for activation,Active toggle is shown (not Resend Invite button)
+
+,Test Case,Verify Reactivate User (Toggle Off to On),1,Locate user with Active toggle in Off state,User with Off toggle is located
+,,,1,Locate user with Active toggle in Off state,User with Off toggle is located
+,,,2,Click on the Active toggle,Toggle switches to On state
+,,,3,Observe toggle state and user status,User is reactivated in the system
+
+,Test Case,Verify Deactivate User (Toggle On to Off),1,Locate user with Active toggle in On state,User with On toggle is located
+,,,1,Locate user with Active toggle in On state,User with On toggle is located
+,,,2,Click on the Active toggle,Toggle switches to Off state
+,,,3,Observe toggle state and user status,User is deactivated in the system
+
+,Test Case,Verify Resend Invite Button Functionality,1,Locate user with Resend Invite button,User with Resend Invite button is located
+,,,1,Locate user with Resend Invite button,User with Resend Invite button is located
+,,,2,Click Resend Invite button,Button is clicked
+,,,3,Check email server for new invitation,New invitation email is sent to users email address
+
+,Test Case,Verify Search and Filter Combined,1,Type search term in Search box,Search filters users by name/email
+,,,1,Type search term in Search box,Search filters users by name/email
+,,,2,Select role in Filter dropdown,Filter further refines by role
+,,,3,Observe user list,User list shows only users matching both search term and selected role
+
+,Test Case,Verify Add and Remove Multiple Roles,1,Select user with one role,User has one role initially
+,,,1,Select user with one role,User has one role initially
+,,,2,Add two additional roles,User now has three roles
+,,,3,Remove original role,Original role is removed
+,,,4,Observe users final role list,User has two roles remaining
+
+,Test Case,Verify Invite Activate Deactivate Workflow,1,Invite new user,Invitation sent Resend Invite button appears
+,,,1,Invite new user,Invitation sent Resend Invite button appears
+,,,2,User registers via email link,User registers successfully
+,,,3,Verify Active toggle appears,Active toggle replaces Resend Invite button
+,,,4,Deactivate user,Toggle switches to Off
+,,,5,Reactivate user,Toggle switches back to On
+
+,Test Case,Verify Last Updated Timestamp,1,Note Last Updated timestamp for a user,Last Updated timestamp is recorded
+,,,1,Note Last Updated timestamp for a user,Last Updated timestamp is recorded
+,,,2,Modify user (add/remove role or change activation),User modification is completed
+,,,3,Observe Last Updated timestamp,Last Updated timestamp is updated to reflect recent change
+
+,Test Case,Verify User Name Not Editable by Admin,1,Locate user row on Manage Users screen,User row is displayed
+,,,1,Locate user row on Manage Users screen,User row is displayed
+,,,2,Attempt to click or edit User Name field,User Name field is not editable by Admin
+
+,Test Case,Verify Email Not Editable by Admin,1,Locate user row on Manage Users screen,User row is displayed
+,,,1,Locate user row on Manage Users screen,User row is displayed
+,,,2,Attempt to click or edit Email field,Email field is not editable by Admin
+
+,Test Case,Verify Search Box Placeholder Text,1,View Manage Users screen,Manage Users screen is displayed
+,,,1,View Manage Users screen,Manage Users screen is displayed
+,,,2,Observe Search box,Search box displays appropriate placeholder text for searching users
+
+,Test Case,Verify Filter Dropdown All Roles,1,Click on Filter dropdown,Dropdown opens
+,,,1,Click on Filter dropdown,Dropdown opens
+,,,2,Observe all available roles,All system roles are displayed in the dropdown including Admin Coordinator Provider
+
+,Test Case,Verify Clear Search Results,1,Enter search term in Search box,User list is filtered based on search term
+,,,1,Enter search term in Search box,User list is filtered based on search term
+,,,2,Clear the search term,Search box is empty
+,,,3,Observe user list,Full user list is displayed again
+
+,Test Case,Verify Clear Filter Selection,1,Select role filter,User list is filtered by selected role
+,,,1,Select role filter,User list is filtered by selected role
+,,,2,Deselect the role filter,No role filter is active
+,,,3,Observe user list,Full user list is displayed again
+
+,Test Case,Verify Multiple Role Chips Display,1,Locate user with multiple assigned roles,User row is displayed
+,,,1,Locate user with multiple assigned roles,User row is displayed
+,,,2,Observe role display,All assigned roles are displayed as separate chips
+,,,3,Verify each role chip has X button,Each role chip displays an X button for removal
+
+,Test Case,Verify Institution Dropdown Single Selection,1,Open Invite User popup,Invite User popup is displayed
+,,,1,Open Invite User popup,Invite User popup is displayed
+,,,2,Click on Institution dropdown,Dropdown displays available institutions
+,,,3,Select an institution,Only one institution can be selected at a time
+,,,4,Observe dropdown behavior,Dropdown closes after selection
+
+,Test Case,Verify Role Dropdown Single Selection,1,Open Invite User popup,Invite User popup is displayed
+,,,1,Open Invite User popup,Invite User popup is displayed
+,,,2,Click on Role dropdown,Dropdown displays available roles
+,,,3,Select a role,Only one role can be selected at a time
+,,,4,Observe dropdown behavior,Dropdown closes after selection
+
+,Test Case,Verify Invite User Popup Dismiss on Cancel,1,Click Invite User button,Invite User popup is displayed
+,,,1,Click Invite User button,Invite User popup is displayed
+,,,2,Click Cancel button,Popup is dismissed
+,,,3,Observe Manage Users screen,User returns to Manage Users screen without changes
+
+,Test Case,Verify Invite User Popup Dismiss on Send,1,Fill all fields in Invite User popup,All required fields are filled
+,,,1,Fill all fields in Invite User popup,All required fields are filled
+,,,2,Click Send Invite button,Invitation is sent
+,,,3,Observe Manage Users screen,Popup is dismissed and user returns to Manage Users screen
+
+,Test Case,Verify Search Case Insensitivity,1,Enter search term in uppercase,Search term is entered in Search box
+,,,1,Enter search term in uppercase,Search term is entered in Search box
+,,,2,Observe filtered results,Users matching the search term are displayed regardless of case
+,,,3,Clear search and enter same term in lowercase,Search term is entered in lowercase
+,,,4,Observe filtered results,Same users are displayed as with uppercase search
+
+,Test Case,Verify No Results Message for Search,1,Enter search term with no matches,Search term is entered in Search box
+,,,1,Enter search term with no matches,Search term is entered in Search box
+,,,2,Observe user list,No users are displayed or appropriate message is shown
+
+,Test Case,Verify No Results Message for Filter,1,Select role filter with no matching users,Role filter is selected
+,,,1,Select role filter with no matching users,Role filter is selected
+,,,2,Observe user list,No users are displayed or appropriate message is shown
+
+,Test Case,Verify Add Roles Dropdown Closes After Selection,1,Click Add Roles link for a user,Add Roles dropdown is displayed
+,,,1,Click Add Roles link for a user,Add Roles dropdown is displayed
+,,,2,Select a role from the list,Role is selected and added to user
+,,,3,Observe dropdown behavior,Dropdown closes after role selection
+
+,Test Case,Verify Cannot Remove Last Role,1,Locate user with only one role,User with single role is displayed
+,,,1,Locate user with only one role,User with single role is displayed
+,,,2,Attempt to click X on the only role chip,System prevents removal or shows appropriate message
+,,,3,Observe users role list,User still has the original role
+
+,Test Case,Verify Invitation Email Format,1,Send invitation to new user,Invitation email is sent
+,,,1,Send invitation to new user,Invitation email is sent
+,,,2,Open invitation email,Email is received at specified address
+,,,3,Verify email contains user name,First and Last name are included in email
+,,,4,Verify email contains institution name,Institution name is included in email
+,,,5,Verify email contains registration link,Clickable registration link is present
+
+,Test Case,Verify Registration Link Functionality,1,Receive invitation email,Invitation email is delivered
+,,,1,Receive invitation email,Invitation email is delivered
+,,,2,Click registration link in email,Link opens in browser
+,,,3,Observe displayed page,eNOW registration page is displayed with pre-filled information
+
+,Test Case,Verify Active User Can Access System,1,Verify user Active toggle is On,Active toggle shows On state
+,,,1,Verify user Active toggle is On,Active toggle shows On state
+,,,2,Log in as that user,User attempts to log in
+,,,3,Observe login result,User successfully logs in and accesses eNOW
+
+,Test Case,Verify Deactivated User Cannot Access System,1,Deactivate user by toggling Active to Off,User is deactivated
+,,,1,Deactivate user by toggling Active to Off,User is deactivated
+,,,2,Attempt to log in as deactivated user,User attempts to log in
+,,,3,Observe login result,User cannot log in or receives appropriate error message
+
+,Test Case,Verify Role Permissions After Addition,1,Add Admin role to user without Admin role,Admin role is added to user
+,,,1,Add Admin role to user without Admin role,Admin role is added to user
+,,,2,Log in as that user,User logs in successfully
+,,,3,Verify access to admin features,User has access to admin-specific features and menus
+
+,Test Case,Verify Role Permissions After Removal,1,Remove Admin role from user with Admin role,Admin role is removed from user
+,,,1,Remove Admin role from user with Admin role,Admin role is removed from user
+,,,2,Log in as that user,User logs in successfully
+,,,3,Verify access to admin features,User no longer has access to admin-specific features and menus

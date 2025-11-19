@@ -1,0 +1,74 @@
+
+Scenario 1: Login to eNOW
+GIVEN that a user is registered to use eNOW
+WHEN they click on the link to eNOW
+THEN they are presented with the "Login" screen, below:
+	• Right half of the screen presents a configurable image (configurability NOT required until after Release 1)
+	• Top left provides a language dropdown with all available languages
+	• Screen label "Login"
+	• A label for the text entry box "Email"
+	• A "text entry" box with a default contents of "Enter email"
+	• A "Next" button with a configurable color which is enabled by default (configurability NOT required until after Release 1)
+
+Scenario 2: Click on "Language" Dropdown
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+WHEN they click on the language dropdown
+THEN they are presented with list of the available languages
+   AND at the time of this story that includes English and Spanish
+
+Scenario 3: Click on a Language from the "Language" Dropdown
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+   AND they have been presented with the language dropdown
+WHEN they click on one of the languages from the language dropdown
+THEN the language selected will become the setting for use within eNOW
+   AND the contents on the Login page will be presented in the language selected
+   AND the list of available languages dropdown will be dismissed
+
+Scenario 4: User Clicks on the Next Button - No Value Entered in Text Box
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+   AND no value is in the text box
+WHEN the user clicks on the "Next" button
+THEN display the message "Enter an email"
+
+Scenario 5: User Enters Text into Email Address Text Box
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+WHEN they start typing a value into the text box
+THEN display the message "Please enter a valid email address"
+   AND stay in this state until a valid email is entered
+
+Scenario 6: User Enters a Valid Email Address
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+   AND they start typing a value into the text box
+WHEN the email address is of the format: <letters / numbers / . / ->@<letters and numbers>.<letters / numbers / .>
+THEN stop displaying the message
+
+Scenario 7: User Clicks on the Next Button - Value Entered in Text Box
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+   AND they start typing a value into the text box
+   AND they have entered a valid email address
+WHEN the user clicks on the "Next" button
+THEN validate whether the email is registered with eNOW
+
+Scenario 8: Email is Not Registered with eNOW
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+   AND they start typing a value into the text box
+   AND they have entered a valid email address
+   AND the email is found to be NOT registered with eNOW
+WHEN the email is confirmed to be not registered
+THEN display the message "Couldn't find an account for the email address provided."
+
+Scenario 9: Email is Registered with eNOW
+GIVEN that a user is registered to use eNOW
+   AND they have been presented with the "Login" screen
+   AND they start typing a value into the text box
+   AND they have entered a valid email address
+   AND the email is found to be registered with eNOW
+WHEN the email is confirmed to be registered
+THEN present a mechanism for allowing the user to enter a password #108921  

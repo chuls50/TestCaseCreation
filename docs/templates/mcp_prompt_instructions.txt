@@ -1,0 +1,175 @@
+# Copilot Conversion Prompt
+
+Please convert the attached eNOW Feature Test Suite into individual Playwright MCP (Model Context Protocol) prompts that can be executed by an AI assistant with Playwright automation capabilities. Group these prompts by functional area, following the pattern in the example provided.
+
+## Requirements:
+
+### 1. Structure Each Test Case as a Separate MCP Prompt
+For each test case, create a standalone prompt with the following sections:
+
+- **Context**: Brief explanation specific to the feature being tested (not generic)
+- **Test Objective**: The specific test title and what it validates (include test ID)
+- **Prerequisites**: Clear conditions that must exist before test execution
+- **Test Steps**: Numbered steps with exact MCP commands to execute
+- **Validation**: Verification steps with specific elements or text to check
+- **Success Criteria**: Clear conditions that determine pass/fail
+
+### 2. Use Current MCP Functions
+Always use the current function names with proper syntax:
+
+- `mcp_playwright_browser_navigate`: Navigate to URLs
+  ```
+  mcp_playwright_browser_navigate({ url: "https://portal.sandbox-encounterservices.com" })
+  ```
+- `mcp_playwright_browser_click`: Click elements
+  ```
+  mcp_playwright_browser_click({ element: "Button description", ref: "#button-id" })
+  ```
+- `mcp_playwright_browser_type`: Type text into fields
+  ```
+  mcp_playwright_browser_type({ element: "Input description", ref: "#input-id", text: "text value" })
+  ```
+- `mcp_playwright_browser_wait_for`: Wait for text/elements/time
+  ```
+  mcp_playwright_browser_wait_for({ text: "Expected text" })
+  mcp_playwright_browser_wait_for({ time: 2 })
+  ```
+- `mcp_playwright_browser_snapshot`: Capture accessibility snapshot
+  ```
+  mcp_playwright_browser_snapshot()
+  ```
+- `mcp_playwright_browser_take_screenshot`: Capture visual screenshots
+  ```
+  mcp_playwright_browser_take_screenshot({ filename: "screenshot-name.jpg" })
+  ```
+
+### 3. Format Each Step Properly
+For each test step:
+
+1. Include a clear description of the action
+2. Follow with the actual MCP command in a code block with triple backticks
+3. Use proper parameter formatting with element descriptions and references
+
+### 4. Group Related Tests by Functional Area
+Organize tests into logical sections with clear headers:
+
+```markdown
+# eNOW [Feature Name] - Playwright MCP Test Prompts
+
+## [Functional Area] Tests
+
+### MCP Test Prompt: [Test ID] - [Test Title]
+...test content...
+
+---
+
+### MCP Test Prompt: [Test ID] - [Test Title]
+...test content...
+
+---
+
+## [Next Functional Area] Tests
+...additional tests...
+```
+
+Example functional areas:
+- Screen Display & Elements
+- Validation & Data Entry
+- Error Handling
+- Navigation & Workflow
+- Specific Feature Functionality
+
+### 5. Element Selection Strategy
+When identifying elements on the page:
+
+1. **Use both human-friendly descriptions AND reliable selectors**:
+   ```
+   mcp_playwright_browser_click({ 
+     element: "Submit button", 
+     ref: "#submit-button" 
+   })
+   ```
+
+2. **Prioritize selector types**:
+   - ID selectors (#element-id)
+   - Specific attribute selectors ([data-testid="submit"])
+   - Semantic role selectors (button:has-text("Submit"))
+   - CSS class selectors (.submit-button)
+
+3. **Handle dynamic elements** by using:
+   - Text content: `button:has-text("Login")`
+   - Partial text matching: `text=Enter your`
+   - Parent-child relationships: `.form-group >> input`
+
+### 6. Example Output Format
+
+```markdown
+# eNOW Password Feature - Playwright MCP Test Prompts
+
+## Password Screen Display & Elements Tests
+
+### MCP Test Prompt: TC-PWD-001 - 1.1 Verify Email Badge Display
+
+#### Context
+You are testing the eNOW password system using Playwright automation through MCP.
+
+#### Test Objective
+Verify that the user's email badge is displayed on the Password screen.
+
+#### Prerequisites
+User has entered a valid email address and clicked Next on the login screen.
+
+#### Test Steps
+1. Navigate to the eNOW login page
+   ```
+   mcp_playwright_browser_navigate({ url: "https://portal.sandbox-encounterservices.com" })
+   ```
+2. Enter a valid email address
+   ```
+   mcp_playwright_browser_type({ 
+     element: "Email input field", 
+     ref: "#email-input", 
+     text: "user@example.com" 
+   })
+   ```
+3. Click the Next button
+   ```
+   mcp_playwright_browser_click({ 
+     element: "Next button", 
+     ref: "#next-button" 
+   })
+   ```
+4. Verify that a badge displays the user's email address
+   ```
+   mcp_playwright_browser_wait_for({ text: "user@example.com" })
+   mcp_playwright_browser_snapshot()
+   ```
+
+#### Validation
+- Verify the badge displays the user's email address
+
+#### Success Criteria
+Test passes if the badge correctly displays the user's email address.
+```
+
+### 7. Best Practices for MCP Test Prompts
+
+1. **Start with navigation** to establish initial state
+2. **Include appropriate waits** before interactions and verifications
+3. **Use snapshots strategically** at key verification points
+4. **Provide specific validation criteria** rather than generic checks
+5. **Handle potential errors** by checking for alternative paths
+6. **Use actual test data** from environment variables when available
+7. **Separate test setup** from actual test actions
+8. **Include visual separators** between test cases (use horizontal rules)
+
+### 8. Environment-Specific Information
+
+- **Base URL**: Use the actual environment URL (e.g., "https://portal.sandbox-encounterservices.com")
+- **Credentials**: Use valid test accounts from .env files when available
+- **Selectors**: Adapt selectors to match the actual implementation
+- **Wait Times**: Adjust based on environment performance (typically 2-3 seconds)
+
+When executing these prompts, the AI assistant will follow them exactly as written, so ensure all details are precise and accurate.
+
+Please convert the test suite into comprehensive Playwright MCP prompts following these guidelines.

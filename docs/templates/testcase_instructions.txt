@@ -1,0 +1,16 @@
+Analyze the test suite and test plan, then create test cases that will be uploaded into Azure
+If you encounter single or double quotes, just ignore them in your output.
+
+When outputting your results, please duplicate the first Step Action and Step expected, like below:
+
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected
+,Test Case,Verify Login Screen Display,1,Click on the link to eNOW,Login screen is displayed
+,,,1,Click on the link to eNOW,Login screen is displayed
+
+,Test Case,Verify Login Screen Elements,1,Observe the right half of the screen,Right half of screen displays a configurable image
+,,,1,Observe the right half of the screen,Right half of screen displays a configurable image
+,,,2,Observe the top left corner of the screen,Top left corner contains a language dropdown with all available languages
+,,,3,Observe the screen label,Screen displays Login label
+,,,4,Observe the text entry box label,Text entry box is labeled Email
+,,,5,Observe the text entry box default content,Text entry box contains default text 'Enter email'
+,,,6,Observe the 'Next' button,Next button is present with configurable color and is enabled by default

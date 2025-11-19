@@ -1,0 +1,43 @@
+Scenario 1: Change Language
+GIVEN that a user is registered to use eNOW
+   AND they have navigated to the "Settings" screen
+   AND they clicked on the "My account" tab and that tab is on display
+WHEN they click on the "Change language" link
+THEN they are presented with the "Change language" screen, below:
+Language text box with "Language" label 
+"Save changes" button with a configurable color which is disabled by default (configurability NOT required until after Release 1)
+"Cancel" button with a configurable color which is enabled by default (configurability NOT required until after Release 1)
+
+Image
+
+Scenario 2: Click on Country Dropdown
+GIVEN that a user is registered to use eNOW
+   AND they have navigated to the "Settings" screen
+   AND they clicked on the "My account" tab and that tab is on display
+   AND they clicked on the "Change language" link and that screen is on display
+WHEN the user selects the "Language" dropdown
+THEN present a list of all available languages in alphabetical order
+   AND when the user selects a language - display that value in the field
+   AND enable the "Save changes" button
+
+Scenario 3: Click on Cancel Button
+GIVEN that a user is registered to use eNOW
+   AND they have navigated to the "Settings" screen
+   AND they clicked on the "My account" tab and that tab is on display
+   AND they clicked on the "Change language" link and that screen is on display
+   AND the "Cancel" button is active
+WHEN the user clicks on the "Cancel" button
+THEN discard any changes the user has made on the "Change language" screen
+   AND dismiss the "Change language" screen
+   AND reset the values on the "My account" tab to the most recently saved values
+
+Scenario 4: Click on Save Changes Button
+GIVEN that a user is registered to use eNOW
+   AND they have navigated to the "Settings" screen
+   AND they clicked on the "My account" tab and that tab is on display
+   AND they clicked on the "Change language" link and that screen is on display
+   AND the "Save Changes" button is active
+WHEN the user clicks on the "Save Changes" button
+THEN save the values specified on the screen
+   AND update all changed values to be the latest saved values on the "My Account" tab
+   AND dismiss the "Change language" screen
