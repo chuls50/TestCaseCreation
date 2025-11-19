@@ -5,33 +5,34 @@
 | Scenario Name | Requirement | Test Case |
 |---------------|-------------|-----------|
 | Scenario 1: Login to eNOW | 1.1 The Login screen should display when users click on the eNOW link | 1.1.1 Verify the Login screen appears when clicking the eNOW link |
-|  | 1.2 The Login screen should have correct elements | 1.2.1 Verify right half of screen presents a configurable image |
-|  |  | 1.2.2 Verify top left provides a language dropdown with all available languages |
-|  |  | 1.2.3 Verify screen label shows "Login" |
-|  |  | 1.2.4 Verify the text entry box is labeled "Email" |
-|  |  | 1.2.5 Verify text entry box has default content "Enter email" |
-|  |  | 1.2.6 Verify "Next" button is present with configurable color and enabled by default |
+|  | 1.2 The Login screen should have a configurable image on the right half | 1.2.1 Verify right half of screen presents a configurable image |
+|  | 1.3 The Login screen should have a language dropdown in the top left | 1.3.1 Verify top left provides a language dropdown with all available languages |
+|  | 1.4 The Login screen should have correct labels and text entry elements | 1.4.1 Verify screen label shows "Login" |
+|  |  | 1.4.2 Verify a label for the text entry box shows "Email" |
+|  |  | 1.4.3 Verify a text entry box with default contents "Enter email" |
+|  | 1.5 The Login screen should have a Next button with configurable color enabled by default | 1.5.1 Verify a "Next" button with configurable color is present and enabled by default |
 |
 | Scenario 2: Click on "Language" Dropdown | 2.1 Language dropdown should display list of available languages | 2.1.1 Verify clicking on language dropdown presents list of available languages |
-|  | 2.2 Available languages should include English and Spanish | 2.2.1 Verify English and Spanish are available in the language dropdown |
+|  | 2.2 Available languages should include English and Spanish | 2.2.1 Verify available languages include English |
+|  |  | 2.2.2 Verify available languages include Spanish |
 |
-| Scenario 3: Click on a Language from the "Language" Dropdown | 3.1 Selecting a language should set it as the language for eNOW | 3.1.1 Verify selected language becomes the setting for use within eNOW |
-|  | 3.2 Contents on Login page should be presented in selected language | 3.2.1 Verify contents on Login page are presented in the selected language |
-|  | 3.3 Language dropdown should be dismissed after selection | 3.3.1 Verify language dropdown list is dismissed after selection |
+| Scenario 3: Click on a Language from the "Language" Dropdown | 3.1 Selected language should become the setting for use within eNOW | 3.1.1 Verify the language selected becomes the setting for use within eNOW |
+|  | 3.2 Login page contents should be presented in the selected language | 3.2.1 Verify contents on Login page are presented in the language selected |
+|  | 3.3 Language dropdown should be dismissed after selection | 3.3.1 Verify the language dropdown is dismissed after selection |
 |
-| Scenario 4: User Clicks on the Next Button - No Value Entered in Text Box | 4.1 System should display error message when Next is clicked with empty text box | 4.1.1 Verify message "Enter an email" is displayed when Next is clicked with empty text box |
+| Scenario 4: User Clicks on the Next Button - No Value Entered in Text Box | 4.1 System should display error message when Next is clicked with no email entered | 4.1.1 Verify message "Enter an email" is displayed when Next button is clicked with no value in text box |
 |
-| Scenario 5: User Enters Text into Email Address Text Box | 5.1 System should display validation message while user is typing | 5.1.1 Verify message "Please enter a valid email address" is displayed when typing in the text box |
-|  | 5.2 Validation message should remain until valid email is entered | 5.2.1 Verify validation message remains visible until a valid email is entered |
+| Scenario 5: User Enters Text into Email Address Text Box | 5.1 System should display validation message when user starts typing | 5.1.1 Verify message "Please enter a valid email address" is displayed when user starts typing |
+|  | 5.2 Validation message should stay until a valid email is entered | 5.2.1 Verify validation message remains displayed until a valid email is entered |
 |
-| Scenario 6: User Enters a Valid Email Address | 6.1 System should recognize valid email format | 6.1.1 Verify system recognizes email format <letters/numbers/./->@<letters and numbers>.<letters/numbers/.> as valid |
-|  | 6.2 Validation message should be dismissed when valid email is entered | 6.2.1 Verify validation message disappears when valid email is entered |
+| Scenario 6: User Enters a Valid Email Address | 6.1 System should recognize valid email format | 6.1.1 Verify email format <letters/numbers/./->@<letters and numbers>.<letters/numbers/.> is accepted as valid |
+|  | 6.2 System should stop displaying validation message when valid email is entered | 6.2.1 Verify validation message is dismissed when valid email format is entered |
 |
-| Scenario 7: User Clicks on the Next Button - Value Entered in Text Box | 7.1 System should validate if email is registered with eNOW when Next button is clicked | 7.1.1 Verify system validates whether email is registered with eNOW when Next is clicked |
+| Scenario 7: User Clicks on the Next Button - Value Entered in Text Box | 7.1 System should validate whether the email is registered with eNOW | 7.1.1 Verify system validates whether email is registered with eNOW when Next button is clicked with valid email |
 |
-| Scenario 8: Email is Not Registered with eNOW | 8.1 System should display appropriate message for unregistered email | 8.1.1 Verify message "Couldn't find an account for the email address provided." is displayed for unregistered email |
+| Scenario 8: Email is Not Registered with eNOW | 8.1 System should display error message for unregistered email | 8.1.1 Verify message "Couldn't find an account for the email address provided." is displayed when email is not registered |
 |
-| Scenario 9: Email is Registered with eNOW | 9.1 System should present password entry mechanism for registered email | 9.1.1 Verify system presents password entry mechanism when email is confirmed to be registered |
+| Scenario 9: Email is Registered with eNOW | 9.1 System should present password entry mechanism when email is registered | 9.1.1 Verify password entry mechanism is presented when email is confirmed to be registered |
 
 ## Detailed Test Cases
 
@@ -39,24 +40,22 @@
 |--------------|---------------|-----------------|-----------|
 | 1.1.1 | Click on eNOW link | Login screen is displayed | eNOW application link |
 | 1.2.1 | View Login screen | Right half of screen displays configurable image | N/A |
-| 1.2.2 | View Login screen | Top left corner contains a language dropdown with all available languages | N/A |
-| 1.2.3 | View Login screen | Screen displays "Login" label | N/A |
-| 1.2.4 | View Login screen | Text entry box is labeled "Email" | N/A |
-| 1.2.5 | View Login screen | Text entry box contains default text "Enter email" | N/A |
-| 1.2.6 | View Login screen | "Next" button is displayed with configurable color and enabled by default | N/A |
+| 1.3.1 | View Login screen | Top left corner contains a language dropdown with all available languages | N/A |
+| 1.4.1 | View Login screen | Screen displays "Login" label | N/A |
+| 1.4.2 | View Login screen | Label "Email" is displayed for text entry box | N/A |
+| 1.4.3 | View Login screen | Text entry box displays default contents "Enter email" | N/A |
+| 1.5.1 | View Login screen | "Next" button with configurable color is present and enabled by default | N/A |
 | 2.1.1 | Click on language dropdown | List of available languages is displayed | N/A |
-| 2.2.1 | Open language dropdown | List includes English and Spanish options | N/A |
-| 3.1.1 | Select English from language dropdown | English is set as application language | Language = "English" |
-|  | Select Spanish from language dropdown | Spanish is set as application language | Language = "Spanish" |
-| 3.2.1 | Select English from language dropdown | All text on Login page appears in English | Language = "English" |
-|  | Select Spanish from language dropdown | All text on Login page appears in Spanish | Language = "Spanish" |
-| 3.3.1 | Select any language from dropdown | Language dropdown list disappears after selection | Any available language |
-| 4.1.1 | Click Next button with empty email field | Error message "Enter an email" is displayed | Email = "" (empty) |
-| 5.1.1 | Begin typing in email field | Message "Please enter a valid email address" is displayed | Email = partial input (e.g., "test") |
-| 5.2.1 | Type invalid email | Validation message remains visible | Email = "test" (invalid format) |
-| 6.1.1 | Enter valid email format | System accepts the email as valid | Email = "user@domain.com" |
-|  | Enter valid email with special characters | System accepts the email as valid | Email = "user.name-123@domain.com" |
-| 6.2.1 | Enter valid email | Validation message disappears | Email = "user@domain.com" |
-| 7.1.1 | Enter valid email and click Next | System checks if email is registered | Email = "user@domain.com" |
-| 8.1.1 | Enter valid but unregistered email and click Next | Message "Couldn't find an account for the email address provided." is displayed | Email = "unregistered@domain.com" |
-| 9.1.1 | Enter registered email and click Next | Password entry mechanism is presented | Email = "registered@domain.com" |
+| 2.2.1 | View language dropdown list | English is present in the list | N/A |
+| 2.2.2 | View language dropdown list | Spanish is present in the list | N/A |
+| 3.1.1 | Select a language from dropdown | Selected language becomes the setting for eNOW | English, Spanish |
+| 3.2.1 | Select a language from dropdown | Login page contents are displayed in selected language | English, Spanish |
+| 3.3.1 | Select a language from dropdown | Language dropdown is dismissed | English, Spanish |
+| 4.1.1 | Click Next button with empty text box | Error message "Enter an email" is displayed | N/A |
+| 5.1.1 | Start typing in email text box | Message "Please enter a valid email address" is displayed | Any character input |
+| 5.2.1 | Continue typing invalid email format | Validation message remains displayed | Invalid formats: "test", "test@", "@test.com" |
+| 6.1.1 | Enter valid email format | Email is accepted as valid | Valid formats: "user@example.com", "test.user@domain.co.uk", "user-name@test123.org" |
+| 6.2.1 | Enter valid email format | Validation message is dismissed | "user@example.com" |
+| 7.1.1 | Click Next button with valid email entered | System validates if email is registered with eNOW | "registered@test.com" |
+| 8.1.1 | Submit unregistered email | Message "Couldn't find an account for the email address provided." is displayed | "unregistered@test.com" |
+| 9.1.1 | Submit registered email | Password entry mechanism is presented | "registered@test.com" |

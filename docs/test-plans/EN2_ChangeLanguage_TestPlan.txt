@@ -1,0 +1,42 @@
+# eNOW Change Language Feature Test Plan
+
+## Requirements Analysis
+
+| Scenario Name | Requirement | Test Case |
+|---------------|-------------|-----------|
+| Scenario 1: Change Language | 1.1 The Change language screen should display when user clicks on Change language link | 1.1.1 Verify the Change language screen appears when clicking the Change language link |
+|  | 1.2 The Change language screen should have correct elements | 1.2.1 Verify Language text box with "Language" label is displayed |
+|  |  | 1.2.2 Verify "Save changes" button with configurable color is present and disabled by default |
+|  |  | 1.2.3 Verify "Cancel" button with configurable color is present and enabled by default |
+|
+| Scenario 2: Click on Country Dropdown | 2.1 Language dropdown should display list of all available languages | 2.1.1 Verify clicking on Language dropdown presents list of all available languages |
+|  | 2.2 Languages should be displayed in alphabetical order | 2.2.1 Verify languages are displayed in alphabetical order |
+|  | 2.3 Selected language should be displayed in the field | 2.3.1 Verify selected language value is displayed in the field |
+|  | 2.4 Save changes button should be enabled when language is selected | 2.4.1 Verify "Save changes" button is enabled when user selects a language |
+|
+| Scenario 3: Click on Cancel Button | 3.1 Cancel button should discard any changes made | 3.1.1 Verify changes are discarded when Cancel button is clicked |
+|  | 3.2 Cancel button should dismiss the Change language screen | 3.2.1 Verify Change language screen is dismissed when Cancel button is clicked |
+|  | 3.3 Cancel button should reset values to most recently saved values | 3.3.1 Verify values on My account tab are reset to most recently saved values when Cancel is clicked |
+|
+| Scenario 4: Click on Save Changes Button | 4.1 Save Changes button should save the specified values | 4.1.1 Verify values specified on screen are saved when Save Changes button is clicked |
+|  | 4.2 Save Changes button should update all changed values on My Account tab | 4.2.1 Verify all changed values are updated to latest saved values on My Account tab |
+|  | 4.3 Save Changes button should dismiss the Change language screen | 4.3.1 Verify Change language screen is dismissed when Save Changes button is clicked |
+
+## Detailed Test Cases
+
+| Test Case ID | Test Scenario | Expected Result | Test Data |
+|--------------|---------------|-----------------|-----------|
+| 1.1.1 | Navigate to Settings > My account tab and click Change language link | Change language screen is displayed | N/A |
+| 1.2.1 | View Change language screen | Language text box with "Language" label is displayed | N/A |
+| 1.2.2 | View Change language screen | "Save changes" button with configurable color is present and disabled | N/A |
+| 1.2.3 | View Change language screen | "Cancel" button with configurable color is present and enabled | N/A |
+| 2.1.1 | Click on Language dropdown | List of all available languages is displayed | N/A |
+| 2.2.1 | View Language dropdown list | Languages are displayed in alphabetical order | Multiple languages (English, Spanish, French, German, etc.) |
+| 2.3.1 | Select a language from dropdown | Selected language value is displayed in the field | English, Spanish, French |
+| 2.4.1 | Select a language from dropdown | "Save changes" button becomes enabled | English, Spanish, French |
+| 3.1.1 | Make changes and click Cancel button | Changes are discarded | Change language selection |
+| 3.2.1 | Click Cancel button | Change language screen is dismissed | N/A |
+| 3.3.1 | Click Cancel button after making changes | Values on My account tab are reset to most recently saved values | Previous language setting |
+| 4.1.1 | Select language and click Save Changes button | Specified language value is saved | English, Spanish, French |
+| 4.2.1 | Click Save Changes button | All changed values are updated on My Account tab to latest saved values | Selected language |
+| 4.3.1 | Click Save Changes button | Change language screen is dismissed | N/A |

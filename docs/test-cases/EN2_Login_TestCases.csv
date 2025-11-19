@@ -2,56 +2,102 @@ ID,Work Item Type,Title,Test Step,Step Action,Step Expected
 ,Test Case,Verify Login Screen Display,1,Click on the link to eNOW,Login screen is displayed
 ,,,1,Click on the link to eNOW,Login screen is displayed
 
-,Test Case,Verify Login Screen Elements,1,Observe the right half of the screen,Right half of screen displays a configurable image
-,,,1,Observe the right half of the screen,Right half of screen displays a configurable image
-,,,2,Observe the top left corner of the screen,Top left corner contains a language dropdown with all available languages
-,,,3,Observe the screen label,Screen displays Login label
-,,,4,Observe the text entry box label,Text entry box is labeled Email
-,,,5,Observe the text entry box default content,Text entry box contains default text Enter email
-,,,6,Observe the Next button,Next button is present with configurable color and is enabled by default
+,Test Case,Verify Configurable Image on Right Half,1,Observe the right half of the Login screen,Right half displays a configurable image
+,,,1,Observe the right half of the Login screen,Right half displays a configurable image
 
-,Test Case,Verify Language Dropdown Display,1,Click on the language dropdown,List of available languages is displayed
-,,,1,Click on the language dropdown,List of available languages is displayed
+,Test Case,Verify Language Dropdown in Top Left,1,Observe the top left corner of the Login screen,Top left corner contains a language dropdown with all available languages
+,,,1,Observe the top left corner of the Login screen,Top left corner contains a language dropdown with all available languages
 
-,Test Case,Verify Available Languages,1,Observe the languages in the dropdown list,List includes English and Spanish options
-,,,1,Observe the languages in the dropdown list,List includes English and Spanish options
+,Test Case,Verify Login Screen Label,1,Observe the screen label,Screen displays Login label
+,,,1,Observe the screen label,Screen displays Login label
 
-,Test Case,Verify English Language Selection,1,Select English from language dropdown,English is set as application language
-,,,1,Select English from language dropdown,English is set as application language
-,,,2,Observe page content after selection,All text on Login page appears in English
-,,,3,Observe dropdown after selection,Language dropdown list disappears after selection
+,Test Case,Verify Email Label,1,Observe the label for the text entry box,Label Email is displayed for text entry box
+,,,1,Observe the label for the text entry box,Label Email is displayed for text entry box
 
-,Test Case,Verify Spanish Language Selection,1,Select Spanish from language dropdown,Spanish is set as application language
-,,,1,Select Spanish from language dropdown,Spanish is set as application language
-,,,2,Observe page content after selection,All text on Login page appears in Spanish
-,,,3,Observe dropdown after selection,Language dropdown list disappears after selection
+,Test Case,Verify Email Text Entry Box Default Content,1,Observe the text entry box,Text entry box displays default contents Enter email
+,,,1,Observe the text entry box,Text entry box displays default contents Enter email
 
-,Test Case,Verify Empty Email Field Validation,1,Leave email field empty,Email field contains no value
-,,,1,Leave email field empty,Email field contains no value
+,Test Case,Verify Next Button Display and State,1,Observe the Next button,Next button with configurable color is present and enabled by default
+,,,1,Observe the Next button,Next button with configurable color is present and enabled by default
+
+,Test Case,Verify Language Dropdown Opens,1,Click on the language dropdown in top left corner,List of available languages is displayed
+,,,1,Click on the language dropdown in top left corner,List of available languages is displayed
+
+,Test Case,Verify English Language Available,1,Observe the language dropdown list,English is present in the list of available languages
+,,,1,Observe the language dropdown list,English is present in the list of available languages
+
+,Test Case,Verify Spanish Language Available,1,Observe the language dropdown list,Spanish is present in the list of available languages
+,,,1,Observe the language dropdown list,Spanish is present in the list of available languages
+
+,Test Case,Verify Language Selection Updates Setting,1,Click on English from the language dropdown,English becomes the setting for use within eNOW
+,,,1,Click on English from the language dropdown,English becomes the setting for use within eNOW
+
+,Test Case,Verify Login Page Content Changes to Selected Language,1,Click on Spanish from the language dropdown,Spanish is selected
+,,,1,Click on Spanish from the language dropdown,Spanish is selected
+,,,2,Observe the Login page contents,Login page contents are displayed in Spanish
+
+,Test Case,Verify Language Dropdown Dismisses After Selection,1,Click on English from the language dropdown,English is selected
+,,,1,Click on English from the language dropdown,English is selected
+,,,2,Observe the language dropdown,Language dropdown list is dismissed
+
+,Test Case,Verify Multiple Language Selections,1,Click on language dropdown,Language dropdown opens
+,,,1,Click on language dropdown,Language dropdown opens
+,,,2,Select Spanish,Spanish is applied
+,,,3,Click on language dropdown again,Language dropdown opens again
+,,,4,Select English,English is applied
+
+,Test Case,Verify Empty Email Field Validation,1,Leave email field empty,Email field remains empty
+,,,1,Leave email field empty,Email field remains empty
 ,,,2,Click the Next button,Error message Enter an email is displayed
 
-,Test Case,Verify Initial Email Format Validation,1,Begin typing in the email field with an invalid format,Message Please enter a valid email address is displayed
-,,,1,Begin typing in the email field with an invalid format,Message Please enter a valid email address is displayed
-,,,2,Observe validation message,Message appears immediately as user begins typing
+,Test Case,Verify Validation Message on Start Typing,1,Click in the email text box,Cursor appears in email field
+,,,1,Click in the email text box,Cursor appears in email field
+,,,2,Start typing any character,Message Please enter a valid email address is displayed
 
-,Test Case,Verify Invalid Email Format Persistence,1,Type invalid email in the field,Message Please enter a valid email address is displayed
-,,,1,Type invalid email in the field,Message Please enter a valid email address is displayed
-,,,2,Observe validation message,Message continues to display until a valid email is entered
+,Test Case,Verify Validation Message Persists with Invalid Format,1,Type test in email field,test appears in field
+,,,1,Type test in email field,test appears in field
+,,,2,Observe validation message,Validation message is displayed
+,,,3,Type @ (making it test@),test@ appears in field
+,,,4,Observe validation message,Validation message remains displayed
 
-,Test Case,Verify Valid Email Format Acceptance,1,Enter valid email format in the email field,System accepts the email as valid
-,,,1,Enter valid email format in the email field,System accepts the email as valid
-,,,2,Observe validation message behavior,Validation message disappears
+,Test Case,Verify Valid Email Format - Standard,1,Type user@example.com in email field,user@example.com appears in field
+,,,1,Type user@example.com in email field,user@example.com appears in field
+,,,2,Observe validation message,Validation message is dismissed
 
-,Test Case,Verify Email Registration Validation,1,Enter valid email address,Email is entered in the field
-,,,1,Enter valid email address,Email is entered in the field
-,,,2,Click the Next button,System validates the email against registered accounts
+,Test Case,Verify Valid Email Format - With Subdomain,1,Type test.user@domain.co.uk in email field,test.user@domain.co.uk appears in field
+,,,1,Type test.user@domain.co.uk in email field,test.user@domain.co.uk appears in field
+,,,2,Observe validation message,Validation message is dismissed
 
-,Test Case,Verify Unregistered Email Handling,1,Enter valid but unregistered email address,Email is entered in the field
-,,,1,Enter valid but unregistered email address,Email is entered in the field
-,,,2,Click the Next button,System validates the email against registered accounts
-,,,3,Observe error message,Message Couldnt find an account for the email address provided. is displayed
+,Test Case,Verify Valid Email Format - With Hyphen,1,Type user-name@test123.org in email field,user-name@test123.org appears in field
+,,,1,Type user-name@test123.org in email field,user-name@test123.org appears in field
+,,,2,Observe validation message,Validation message is dismissed
 
-,Test Case,Verify Registered Email Handling,1,Enter valid registered email address,Email is entered in the field
-,,,1,Enter valid registered email address,Email is entered in the field
-,,,2,Click the Next button,System validates the email against registered accounts
-,,,3,Observe next screen,Password entry mechanism is presented
+,Test Case,Verify System Validates Email Registration,1,Type testuser@example.com in email field,Valid email appears in field
+,,,1,Type testuser@example.com in email field,Valid email appears in field
+,,,2,Click Next button,Next button is clicked
+,,,3,Observe system behavior,System validates if email is registered with eNOW
+
+,Test Case,Verify Unregistered Email Error Message,1,Type unregistered@test.com in email field,unregistered@test.com appears in field
+,,,1,Type unregistered@test.com in email field,unregistered@test.com appears in field
+,,,2,Click Next button,Next button is clicked
+,,,3,Observe error message,Error message Couldn't find an account for the email address provided. is displayed
+
+,Test Case,Verify Multiple Unregistered Email Attempts,1,Type user1@unregistered.com in email field,First email appears
+,,,1,Type user1@unregistered.com in email field,First email appears
+,,,2,Click Next button,Next clicked
+,,,3,Observe error message,Error message displayed
+,,,4,Clear email field,Field cleared
+,,,5,Type user2@unregistered.com,Second email appears
+,,,6,Click Next button,Next clicked
+,,,7,Observe error message,Error message displayed again
+
+,Test Case,Verify Password Entry Mechanism for Registered Email,1,Type registered@test.com in email field,registered@test.com appears in field
+,,,1,Type registered@test.com in email field,registered@test.com appears in field
+,,,2,Click Next button,Next button is clicked
+,,,3,Observe system response,Password entry mechanism is presented
+
+,Test Case,Verify Transition to Password Entry Screen,1,Type validuser@enow.com in email field,Valid registered email appears
+,,,1,Type validuser@enow.com in email field,Valid registered email appears
+,,,2,Click Next button,Next clicked
+,,,3,Wait for system validation,System validates email
+,,,4,Observe screen transition,Screen transitions to password entry

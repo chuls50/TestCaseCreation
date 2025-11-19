@@ -23,12 +23,14 @@ This project automates the traditionally manual and time-consuming process of cr
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/chuls50/TestCaseCreation.git
    cd TestCaseCreation
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -41,12 +43,15 @@ This project automates the traditionally manual and time-consuming process of cr
 ### Usage
 
 1. **Add your user story** to `docs/user-stories/` with the naming convention:
+
    ```
    <FeatureName>.us.txt
    ```
+
    Example: `EN2_Login.us.txt`
 
 2. **Run the generation script:**
+
    ```bash
    npm run generate-testcases
    ```
@@ -120,6 +125,7 @@ npm run generate-testcases
 ```
 
 **Best for:**
+
 - Standard workflow
 - Processing single or multiple user stories
 - Quick command generation
@@ -133,6 +139,7 @@ npm run generate-testcases:review
 ```
 
 **Best for:**
+
 - Quality assurance
 - Critical features
 - Learning the workflow
@@ -142,11 +149,11 @@ npm run generate-testcases:review
 
 For a user story named `FeatureName.us.txt`, the workflow generates:
 
-| Artifact | Location | Filename |
-|----------|----------|----------|
-| Test Plan | `docs/test-plans/` | `FeatureName_TestPlan.txt` |
-| Test Suite | `docs/test-suites/` | `FeatureName_TestSuite.md` |
-| Test Cases | `docs/test-cases/` | `FeatureName_TestCases.csv` |
+| Artifact   | Location            | Filename                    |
+| ---------- | ------------------- | --------------------------- |
+| Test Plan  | `docs/test-plans/`  | `FeatureName_TestPlan.txt`  |
+| Test Suite | `docs/test-suites/` | `FeatureName_TestSuite.md`  |
+| Test Cases | `docs/test-cases/`  | `FeatureName_TestCases.csv` |
 
 ## 💡 Example
 
@@ -175,6 +182,7 @@ npm run generate-testcases
 ### Output
 
 The script generates three files:
+
 1. `docs/test-plans/EN2_Login_TestPlan.txt`
 2. `docs/test-suites/EN2_Login_TestSuite.md`
 3. `docs/test-cases/EN2_Login_TestCases.csv`
@@ -204,6 +212,7 @@ The script automatically skips user stories that already have all three artifact
 2. Run the script again
 
 Example: To regenerate only test cases:
+
 ```bash
 rm docs/test-cases/EN2_Login_TestCases.csv
 npm run generate-testcases
@@ -278,6 +287,7 @@ ISC
 ## 📧 Support
 
 For questions or issues:
+
 - Review the agent configuration files in `.github/agents/`
 - Check the example files in `docs/templates/`
 - Ensure GitHub Copilot is properly configured in VS Code
@@ -286,6 +296,7 @@ For questions or issues:
 ## 🎉 Examples Included
 
 The repository includes complete examples:
+
 - `docs/user-stories/EN2_Login.us.txt` - Sample user story
 - `docs/test-plans/EN2_Login_TestPlan.txt` - Generated test plan
 - `docs/test-suites/EN2_Login_TestSuite.md` - Generated test suite

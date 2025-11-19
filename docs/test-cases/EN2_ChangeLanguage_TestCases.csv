@@ -1,0 +1,117 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected
+,Test Case,Verify Navigation to Change Language Screen,1,Navigate to Settings screen,Settings screen is displayed
+,,,1,Navigate to Settings screen,Settings screen is displayed
+,,,2,Click on My account tab,My account tab is displayed
+,,,3,Click on Change language link,Change language screen is displayed
+
+,Test Case,Verify Language Text Box with Label,1,Observe the Change language screen elements,Screen elements are visible
+,,,1,Observe the Change language screen elements,Screen elements are visible
+,,,2,Locate the Language text box,Language text box with Language label is displayed
+
+,Test Case,Verify Save Changes Button Initial State,1,Observe the Save changes button,Save changes button is visible with configurable color
+,,,1,Observe the Save changes button,Save changes button is visible with configurable color
+,,,2,Check button state,Button is disabled by default
+
+,Test Case,Verify Cancel Button Initial State,1,Observe the Cancel button,Cancel button is visible with configurable color
+,,,1,Observe the Cancel button,Cancel button is visible with configurable color
+,,,2,Check button state,Button is enabled by default
+
+,Test Case,Verify Language Dropdown Opens,1,Click on the Language dropdown,List of all available languages is displayed
+,,,1,Click on the Language dropdown,List of all available languages is displayed
+
+,Test Case,Verify Languages Display in Alphabetical Order,1,Click on the Language dropdown,Language dropdown opens
+,,,1,Click on the Language dropdown,Language dropdown opens
+,,,2,Observe the order of languages in the list,Languages are displayed in alphabetical order
+
+,Test Case,Verify Language Selection Displays in Field,1,Click on English from the dropdown,English is selected
+,,,1,Click on English from the dropdown,English is selected
+,,,2,Observe the Language field,English value is displayed in the Language field
+
+,Test Case,Verify Save Changes Button Enables on Selection,1,Click on Spanish from the dropdown,Spanish is selected and displayed in field
+,,,1,Click on Spanish from the dropdown,Spanish is selected and displayed in field
+,,,2,Observe the Save changes button state,Save changes button becomes enabled
+
+,Test Case,Verify Multiple Language Selections,1,Click Language dropdown and select French,French appears in field, Save changes enabled
+,,,1,Click Language dropdown and select French,French appears in field, Save changes enabled
+,,,2,Observe field and button state,Field shows French, button enabled
+,,,3,Click Language dropdown again and select German,Dropdown opens again
+,,,4,Observe field and button state,German appears in field, button remains enabled
+
+,Test Case,Verify Dropdown Closes After Selection,1,Click on English from the dropdown,English is selected
+,,,1,Click on English from the dropdown,English is selected
+,,,2,Observe the dropdown state,Language dropdown closes automatically
+
+,Test Case,Verify Cancel Discards Changes,1,Click Language dropdown and select Spanish,Spanish appears in field
+,,,1,Click Language dropdown and select Spanish,Spanish appears in field
+,,,2,Observe Save changes button is enabled,Save changes button is enabled
+,,,3,Click Cancel button,Cancel button is clicked
+,,,4,Navigate back to Change language screen,Change language screen opens again
+,,,5,Observe language setting,Language setting remains English (unchanged)
+
+,Test Case,Verify Cancel Dismisses Change Language Screen,1,Click Cancel button,Cancel button is clicked
+,,,1,Click Cancel button,Cancel button is clicked
+,,,2,Observe screen behavior,Change language screen is dismissed and My account tab is displayed
+
+,Test Case,Verify Cancel Resets to Most Recently Saved Values,1,Click Language dropdown and select German,German appears in field
+,,,1,Click Language dropdown and select German,German appears in field
+,,,2,Click Cancel button,Screen is dismissed
+,,,3,Open Change language screen again,Change language screen opens
+,,,4,Observe language value,Language field displays French (most recently saved)
+
+,Test Case,Verify Cancel Without Making Changes,1,Observe current language setting,Current language displayed
+,,,1,Observe current language setting,Current language displayed
+,,,2,Click Cancel button without selecting new language,Cancel clicked
+,,,3,Observe screen behavior,Screen dismissed, returns to My account tab
+
+,Test Case,Verify Save Changes Saves Language Selection,1,Click Language dropdown and select Spanish,Spanish appears in field, Save changes enabled
+,,,1,Click Language dropdown and select Spanish,Spanish appears in field, Save changes enabled
+,,,2,Click Save changes button,Changes are saved
+,,,3,Navigate back to Change language screen,Change language screen opens
+,,,4,Observe saved language,Language field displays Spanish
+
+,Test Case,Verify Save Changes Updates My Account Tab,1,Click Language dropdown and select French,French appears in field
+,,,1,Click Language dropdown and select French,French appears in field
+,,,2,Click Save changes button,Changes saved, screen dismissed
+,,,3,Observe My account tab,My account tab is displayed
+,,,4,Verify language setting on My account tab,Language setting shows French on My account tab
+
+,Test Case,Verify Save Changes Dismisses Screen,1,Click Language dropdown and select German,German is selected
+,,,1,Click Language dropdown and select German,German is selected
+,,,2,Click Save changes button,Save changes clicked
+,,,3,Observe screen behavior,Change language screen is dismissed, My account tab displayed
+
+,Test Case,Verify Multiple Save Operations,1,Select Spanish and click Save changes,Spanish saved, screen dismissed
+,,,1,Select Spanish and click Save changes,Spanish saved, screen dismissed
+,,,2,Return to Change language screen,Screen opens with Spanish selected
+,,,3,Select English and click Save changes,English saved, screen dismissed
+,,,4,Return to Change language screen,Screen opens again
+,,,5,Verify current language,Language shows English
+
+,Test Case,Verify Save Changes Button Remains Disabled Until Selection,1,Observe Save changes button state,Button is disabled
+,,,1,Observe Save changes button state,Button is disabled
+,,,2,Click Language dropdown without selecting,Dropdown opens
+,,,3,Close dropdown,Dropdown closes
+,,,4,Observe Save changes button state,Button remains disabled
+
+,Test Case,Verify Complete Change Language Workflow,1,Navigate to Settings > My account > Change language,Change language screen displayed
+,,,1,Navigate to Settings > My account > Change language,Change language screen displayed
+,,,2,Select Spanish from dropdown,Spanish selected, shown in field
+,,,3,Observe Save changes button enabled,Save changes enabled
+,,,4,Click Save changes,Changes saved
+,,,5,Verify return to My account tab,My account tab displayed
+,,,6,Reopen Change language screen,Change language screen opens
+,,,7,Verify Spanish is current language,Spanish is the current language
+
+,Test Case,Verify Cancel After Partial Change,1,Click Language dropdown,Dropdown opens
+,,,1,Click Language dropdown,Dropdown opens
+,,,2,Hover over German without clicking,German highlighted but not selected
+,,,3,Click outside dropdown to close,Dropdown closes, field unchanged
+,,,4,Click Cancel button,Cancel clicked
+,,,5,Observe behavior,Screen dismissed normally
+
+,Test Case,Verify Language Persistence After Logout/Login,1,Verify current language is French,French is current language
+,,,1,Verify current language is French,French is current language
+,,,2,Log out of eNOW,User logged out
+,,,3,Log back in to eNOW,User logged back in
+,,,4,Navigate to Change language screen,Change language screen displayed
+,,,5,Verify language setting,Language shows French

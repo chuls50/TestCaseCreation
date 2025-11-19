@@ -180,9 +180,7 @@ function printInstructions(toProcess) {
   console.log("=".repeat(80) + "\n");
 
   if (REVIEW_MODE) {
-    console.log(
-      "🔍 REVIEW MODE - Pause between steps for verification\n"
-    );
+    console.log("🔍 REVIEW MODE - Pause between steps for verification\n");
   } else {
     console.log("📝 GUIDED MODE - Follow the steps in sequence\n");
   }
