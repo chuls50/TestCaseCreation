@@ -181,10 +181,10 @@ function printInstructions(toProcess) {
 
   if (REVIEW_MODE) {
     console.log(
-      "🔍 REVIEW MODE ENABLED - You will be prompted to verify each step\n"
+      "🔍 REVIEW MODE - Pause between steps for verification\n"
     );
   } else {
-    console.log("⚡ FULL AUTOMATION MODE - Complete all steps in sequence\n");
+    console.log("📝 GUIDED MODE - Follow the steps in sequence\n");
   }
 
   toProcess.forEach((artifacts, index) => {
@@ -265,9 +265,9 @@ function main() {
   if (REVIEW_MODE) {
     console.log("ℹ️  Running in REVIEW MODE (--review flag detected)\n");
   } else {
-    console.log("ℹ️  Running in FULL AUTOMATION MODE\n");
+    console.log("ℹ️  Running in GUIDED MODE\n");
     console.log(
-      "💡 Tip: Use --review flag to enable step-by-step verification\n"
+      "💡 Tip: Use --review flag to pause between steps for verification\n"
     );
   }
 

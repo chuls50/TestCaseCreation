@@ -1,8 +1,8 @@
 # Test Case Creation Automation
 
-A Playwright-based automation project designed to streamline the creation of comprehensive test documentation from user stories. This project leverages GitHub Copilot agents to automatically generate test plans, test suites, and Azure DevOps-compatible test cases.
+A guided workflow project that streamlines the creation of comprehensive test documentation from user stories. Using GitHub Copilot agents, this tool helps you generate test plans, test suites, and Azure DevOps-compatible test cases through an interactive, copy-paste workflow.
 
-> **⚠️ Important:** This project is focused exclusively on **test case creation and documentation generation**. It does not execute automated tests or run Playwright browser automation. The Playwright framework is used solely to provide the MCP (Model Context Protocol) infrastructure that powers the GitHub Copilot agents.
+> **⚠️ Important:** This project is focused exclusively on **test case creation and documentation generation**. It does not execute automated tests or run Playwright browser automation. This is a documentation generation tool, not a test execution tool.
 
 ## 🎯 Purpose
 
@@ -111,22 +111,22 @@ TestCaseCreation/
 
 ## 🎮 Modes
 
-### Full Automation Mode (Default)
+### Guided Mode (Default)
 
-Run all steps sequentially without pausing:
+Generates all commands in sequence for you to copy and paste:
 
 ```bash
 npm run generate-testcases
 ```
 
 **Best for:**
-- Initial generation of test artifacts
-- Trusted workflows
-- Bulk processing
+- Standard workflow
+- Processing single or multiple user stories
+- Quick command generation
 
 ### Review Mode
 
-Pause between steps for manual verification:
+Same as Guided Mode, but with clear pause indicators between steps:
 
 ```bash
 npm run generate-testcases:review
@@ -136,7 +136,7 @@ npm run generate-testcases:review
 - Quality assurance
 - Critical features
 - Learning the workflow
-- Troubleshooting issues
+- When you want to review each artifact before proceeding
 
 ## 📝 File Naming Convention
 
