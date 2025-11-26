@@ -1,0 +1,38 @@
+​Scenario 1: Video Call - Pre-Call Setup
+GIVEN that a user is registered to use eNOW
+   AND they have navigated to their main "Dashboard" screen (or related)
+   AND they have identified a specific appointment
+   AND the appointment is of type "Video"
+WHEN they click on the "Join Video Session" link or button
+THEN they are presented with the "Pre-Call Setup" screen with the following contents:
+Image of the Video that will be presented
+Device selection buttons
+Camera - Select camera; toggle "video on / video off"
+Microphone - Select microphone; toggle "mic on / mic off"
+Speaker - Select speaker; toggle "speaker on / speaker off"
+"Join Call" button - Proceed to the actual video call
+
+Image
+
+​Scenario 2: Video Call
+GIVEN that a user is registered to use eNOW
+   AND they have navigated to their main "Dashboard" screen (or related)
+   AND they have identified a specific appointment
+   AND they have completed their "pre-call setup" settings
+WHEN they click on the "Join Call" button
+THEN they are presented with the "Video Call" screen with the following contents:
+Image of Video for each participant on the call (name in lower right corner)
+"Add Participants" button
+"Add Document" icon
+Device selection buttons
+Camera - Select camera; toggle "video on / video off"
+Microphone - Select microphone; toggle "mic on / mic off"
+Speaker - Select speaker; toggle "speaker on / speaker off"
+"End Call" button:
+For Patient: Leave the current call and return to appointment summary screen
+For Provider: 2 options presented:
+Leave Meeting - Leave the current call and go to star rating screen #112791
+End Meeting for All - End the meeting for all participants and go to star rating screen #112791; send a message to all participants: "<User Name> has ended the meeting for all participants."
+"Symptoms" button - display the "Symptoms" tab from the Session Details screen as defined in user story #110138 
+"Visit Notes" button (for Providers only) - display the "Summary" tab from the Session Details screen as defined in user story #111129 
+"Chat" button - display a chat window within the video call as defined in user story #112141 
